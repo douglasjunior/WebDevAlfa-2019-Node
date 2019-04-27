@@ -5,8 +5,10 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('projeto-express:server');
+// var debug = require('debug')('projeto-express:server');
 var http = require('http');
+
+const { sequelize } = require('../models/sequelize');
 
 /**
  * Get port from environment and store in Express.
@@ -25,7 +27,15 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+sequelize.sync({ force: true })
+  .then(function () {
+    console.log('Conectado ao banco de dados.')
+    server.listen(port);
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -86,5 +96,5 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }
