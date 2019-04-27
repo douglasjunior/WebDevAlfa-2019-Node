@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "1d8f2e0e-feb9-6f95-4002-b2827a0ff153",
+		"name": "Gerenciamento de Tarefas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/api/usuarios",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Douglas Junior\",\n  \"email\": \"dougla2s@mail.com\",\n  \"cpf\": \"11947575023\",\n  \"nascimento\": \"1989-05-17\",\n  \"senha\": \"senha123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/usuarios/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"douglas@mail.com\",\n\t\"senha\": \"senha123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/usuarios/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwibmFzY2ltZW50byI6IjE5ODktMDUtMTciLCJjcmVhdGVkQXQiOiIyMDE3LTEyLTIwVDE5OjQ4OjEyLjQ3M1oiLCJ1cGRhdGVkQXQiOiIyMDE3LTEyLTIwVDE5OjQ4OjEyLjQ3M1oiLCJpYXQiOjE1MTM3OTkyOTl9.QSnOatRknimD5YY_AQSzbdo80TVuHRM5ESKsRDywjL8"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3001/api/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/usuarios/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwibmFzY2ltZW50byI6IjE5ODktMDUtMTciLCJjcmVhdGVkQXQiOiIyMDE3LTEwLTE2VDAyOjE1OjQ3LjY4MloiLCJ1cGRhdGVkQXQiOiIyMDE3LTEwLTE2VDAyOjE1OjQ3LjY4MloiLCJpYXQiOjE1MDgxMjAxNjN9.MNQpcApy-nuLTGh-OMwmcNEh7sQcVwWBKfo9E8qwmdA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Douglas NAAAA\",\n  \"email\": \"douglas@mail.com\",\n  \"nascimento\": \"1989-05-17\",\n  \"cpf\": \"38340691830\",\n  \"senha\": \"1234567\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwiY3BmIjoiMzgzNDA2OTE4MzAiLCJuYXNjaW1lbnRvIjoiMTk4OS0wNS0xNyIsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsImlhdCI6MTUzNDUzNzcyNH0.4Pz_BlTmm7tedvFAeQQtVVfigLeMYKFMpx8Fy8z2tio"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"Aprender JavaScript\",\n\t\"descricao\": \"Começar estudando NodeJS\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwiY3BmIjoiMzgzNDA2OTE4MzAiLCJuYXNjaW1lbnRvIjoiMTk4OS0wNS0xNyIsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsImlhdCI6MTUzNDUzNzcyNH0.4Pz_BlTmm7tedvFAeQQtVVfigLeMYKFMpx8Fy8z2tio"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"Aprender JavaScript\",\n\t\"descricao\": \"Começar estudando NodeJS\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas?titulo=aprender",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas"
+					],
+					"query": [
+						{
+							"key": "titulo",
+							"value": "aprender"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwiY3BmIjoiMzgzNDA2OTE4MzAiLCJuYXNjaW1lbnRvIjoiMTk4OS0wNS0xNyIsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsImlhdCI6MTUzNDUzNzcyNH0.4Pz_BlTmm7tedvFAeQQtVVfigLeMYKFMpx8Fy8z2tio"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"Aprender JavaScript\",\n\t\"descricao\": \"Começar estudando NodeJS\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwiY3BmIjoiMzgzNDA2OTE4MzAiLCJuYXNjaW1lbnRvIjoiMTk4OS0wNS0xNyIsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsImlhdCI6MTUzNDUzNzcyNH0.4Pz_BlTmm7tedvFAeQQtVVfigLeMYKFMpx8Fy8z2tio"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"Aprender JavaScript!!!!\",\n\t\"descricao\": \"Começar estudando NodeJS e depois avançar para ReactJS!!!!!!!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwiY3BmIjoiMzgzNDA2OTE4MzAiLCJuYXNjaW1lbnRvIjoiMTk4OS0wNS0xNyIsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsImlhdCI6MTUzNDUzNzcyNH0.4Pz_BlTmm7tedvFAeQQtVVfigLeMYKFMpx8Fy8z2tio"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas/1/concluida",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwiY3BmIjoiMzgzNDA2OTE4MzAiLCJuYXNjaW1lbnRvIjoiMTk4OS0wNS0xNyIsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsImlhdCI6MTUzNDUzNzcyNH0.4Pz_BlTmm7tedvFAeQQtVVfigLeMYKFMpx8Fy8z2tio"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas/1/concluida",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas",
+						"1",
+						"concluida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas/1/concluida",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwibm9tZSI6IkRvdWdsYXMgSnVuaW9yIiwiZW1haWwiOiJkb3VnbGFzQG1haWwuY29tIiwiY3BmIjoiMzgzNDA2OTE4MzAiLCJuYXNjaW1lbnRvIjoiMTk4OS0wNS0xNyIsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTdUMjA6MDA6MjIuODc3WiIsImlhdCI6MTUzNDUzNzcyNH0.4Pz_BlTmm7tedvFAeQQtVVfigLeMYKFMpx8Fy8z2tio"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas/1/concluida",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas",
+						"1",
+						"concluida"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
