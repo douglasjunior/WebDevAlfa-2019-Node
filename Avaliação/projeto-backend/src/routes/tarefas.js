@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const { authenticationMiddleware } = require('../utils/token');
-const validateSchema = require('./validateSchema');
 const controller = require('../controllers/tarefas');
 
 /*******
@@ -15,7 +14,6 @@ const controller = require('../controllers/tarefas');
  * 
  * 
  * router.post('/',
- *   validateSchema(validateBody),
  *   authenticationMiddleware,
  *   controller.cadastro,
  * );

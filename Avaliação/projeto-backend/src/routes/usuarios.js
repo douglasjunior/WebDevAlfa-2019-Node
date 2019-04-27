@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const validateSchema = require('./validateSchema');
 const controller = require('../controllers/usuarios');
 
 /*******
@@ -14,7 +13,6 @@ const controller = require('../controllers/usuarios');
  * 
  * 
  * router.post('/',
- *   validateSchema(validateBody),
  *   controller.cadastro
  * );
  *******/
