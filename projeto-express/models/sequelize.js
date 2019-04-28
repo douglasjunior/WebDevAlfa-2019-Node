@@ -36,7 +36,27 @@ const Usuario = sequelize.define('usuario', {
   }
 })
 
+const Tarefa = sequelize.define('tarefa', {
+  id: {
+    primaryKey: true,
+    type: Sequelize.BIGINT,
+    autoIncrement: true,
+  },
+  titulo: {
+    type: Sequelize.STRING(500),
+    allowNull: false
+  },
+  concluido: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+  }
+})
+
+Usuario.hasMany(Tarefa)
+Tarefa.belongsTo(Usuario)
+
 module.exports = {
   sequelize,
-  Usuario
+  Usuario,
+  Tarefa
 };
